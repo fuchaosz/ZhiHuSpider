@@ -357,4 +357,4 @@ def show_html():
 
 if __name__ == '__main__':
     # get_url()
-    # show_html()
+    show_html()
