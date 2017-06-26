@@ -36,9 +36,9 @@ class ZhiHuSpider():
                 driver.implicitly_wait(self.time_wait)
                 driver.get(url)
                 # 保存图片
-                dt = datetime.now()
-                fileName = dt.strftime('%Y-%m-%d_%H-%M-%S') + ".jpg"
-                driver.save_screenshot(fileName)
+                # dt = datetime.now()
+                # fileName = dt.strftime('%Y-%m-%d_%H-%M-%S') + ".jpg"
+                # driver.save_screenshot(fileName)
                 error = driver.page_source.find('你似乎来到了没有知识存在的荒原...')
                 # 404界面
                 if error != -1:
@@ -128,39 +128,38 @@ class ZhiHuSpider():
                 list.append(userHerf[8:])
         return list
 
-def catchUserInfoThread():
-    s = ZhiHuSpider()
-    d = DBUtil()
-    st = Status.Catch()
-    while True:
-        #取出第一个用户
-        userId = d.getFirstUserToCatch()
-        if userId is None:
-            time.sleep(3)
-            continue
-        d.setUserIsCatch(userId,st.is_catching)
-        dict = s.getUserInfo(userId)
-        code = dict['code']
-        #用户没有价值
-        if code == s.code_user_not_useful:
-            d.setUserIsCatch(userId,st.user_not_useful)
-        #用户不存在
-        elif code == s.code_user_not_exist:
-            d.setUserIsCatch(userId,st.user_not_exist)
-        #抓取失败
-        elif code == s.code_failure:
-            d.setUserIsCatch(userId,st.failed)
-        #抓取成功
-        else:
-            d.updateUserInfo(userId,dict)
+    def catchUserInfoThread(self):
+        s = ZhiHuSpider()
+        d = DBUtil()
+        st = Status.Catch()
+        while True:
+            #取出第一个用户
+            userId = d.getFirstUserToCatch()
+            if userId is None:
+                time.sleep(3)
+                continue
+            d.setUserIsCatch(userId,st.is_catching)
+            dict = s.getUserInfo(userId)
+            code = dict['code']
+            #用户没有价值
+            if code == s.code_user_not_useful:
+                d.setUserIsCatch(userId,st.user_not_useful)
+            #用户不存在
+            elif code == s.code_user_not_exist:
+                d.setUserIsCatch(userId,st.user_not_exist)
+            #抓取失败
+            elif code == s.code_failure:
+                d.setUserIsCatch(userId,st.failed)
+            #抓取成功
+            else:
+                d.updateUserInfo(userId,dict)
 
-def test():
-    dt = datetime.now()
-    str = dt.strftime( '%Y-%m-%d_%H-%M-%S') + '.jpg'
-    print(str)
+    def start(self):
+        t = threading.Thread(target=self.catchUserInfoThread)
+        t.start()
+        t.join()
 
 if __name__ == '__main__':
-    t = threading.Thread(target=catchUserInfoThread)
-    t.start()
-    t.join()
+    z = ZhiHuSpider()
+    z.start()
     # test()
