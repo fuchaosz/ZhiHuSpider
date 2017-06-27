@@ -1,4 +1,5 @@
 import requests
+import sys
 
 url = r'https://www.zhihu.com/people/excited-vczh/following'
 
@@ -10,12 +11,12 @@ headers = { "Accept":"text/html,application/xhtml+xml,application/xml;",
             }
 
 def test():
-    d1 = {}
-    d1['code'] = 1
-    d2 = {}
-    d2['code'] = 2
-    d2.update(d1)
-    print(d2)
+    log_file = open('test.log','w')
+    sys.stdout = log_file
+    print('hello')
+    print('test')
+    log_file.close()
+
 
 if __name__ == '__main__':
     test()

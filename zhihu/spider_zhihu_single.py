@@ -10,7 +10,6 @@ import threading
 import  requests
 from zhihu import spider_const
 
-path = r'E:\software\phantomjs-2.1.1-windows\bin\phantomjs.exe'
 base_url = r'https://www.zhihu.com/people/{0}/following'
 
 class ZhiHuSpider():
@@ -35,7 +34,7 @@ class ZhiHuSpider():
         count = 0
         while count < 3:
             try:
-                driver = webdriver.PhantomJS(executable_path=path)
+                driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path)
                 driver.implicitly_wait(self.time_wait)
                 driver.get(url)
                 # 保存图片
@@ -55,7 +54,7 @@ class ZhiHuSpider():
             except Exception as e:
                 print(e)
                 count = count + 1
-                print('发生异常，尝试第{0}次抓取, user_id={1}'.format(count + 1, userId))
+                print('发生异常，尝试第{0}次重试, user_id={1}'.format(count, userId))
             finally:
                 driver.close()
                 print('进入{0}秒休眠'.format(self.time_duration))
@@ -93,6 +92,8 @@ class ZhiHuSpider():
             itemName = item('span.ProfileHeader-detailLabel').text()
             if itemName == '居住地':
                 location = item.find('div.ProfileHeader-detailValue span').text()
+                location = location.replace('现居','')
+                location = location.strip()
                 dict['location'] = location
             elif itemName == '所在行业':
                 major = item('div.ProfileHeader-detailValue').text()
@@ -114,7 +115,7 @@ class ZhiHuSpider():
         code = self.code_success
         try:
             url = base_url.format(userId)
-            driver = webdriver.PhantomJS(executable_path=path)
+            driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path)
             driver.get(url)
             p = pq(driver.page_source)
             # #先拿到页码数
@@ -144,7 +145,7 @@ class ZhiHuSpider():
             return page
         try:
             url = base_url.format(userId)
-            driver = webdriver.PhantomJS(executable_path=path)
+            driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path)
             driver.get(url)
             p = pq(driver.page_source)
             # 先判断有没有TA关注的人
@@ -174,7 +175,7 @@ class ZhiHuSpider():
         url = base_url.format(userId)
         url = '{0}?page={1}'.format(url,page)
         try:
-            driver = webdriver.PhantomJS(executable_path=path)
+            driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path)
             # driver.implicitly_wait(self.time_wait)
             driver.get(url)
             p = pq(driver.page_source)
@@ -246,16 +247,19 @@ class ZhiHuSpider():
                 #设置这一页抓取完毕了
                 d.setUserFollowingPage(userId,i)
                 print('抓取完一页用户的关注者，user_id={0}, page={1}, list.size={2}'.format(userId,i,len(list)))
-                time.sleep(5)
+                time.sleep(self.time_duration)
             #设置抓取完毕
             d.setUserIsFollowing(userId,st.catched)
             print('当前用户全部抓取完毕，user_id=',userId)
 
     def start(self):
-        # t = threading.Thread(target=self.catchUserInfoThread)
-        t = threading.Thread(target=self.catchUserFollowingThread)
-        t.start()
-        t.join()
+        t1 = threading.Thread(target=self.catchUserInfoThread)
+        t2 = threading.Thread(target=self.catchUserFollowingThread)
+        t1.start()
+        t2.start()
+        t1.join()
+        t2.join()
+
 
 if __name__ == '__main__':
     d = DBUtil()
