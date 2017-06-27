@@ -21,6 +21,6 @@ class Status():
             self.not_catch = 0
             self.catched = 1
             self.is_catching = 2
-            self.useless = 3
+            self.user_following_none = 3
             self.failed = 4
             pass

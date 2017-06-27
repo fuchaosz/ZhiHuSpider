@@ -7,6 +7,8 @@ from zhihu.db_tool import DBUtil
 from zhihu.spider_status import  Status
 from datetime import  datetime
 import threading
+import  requests
+from zhihu import spider_const
 
 path = r'E:\software\phantomjs-2.1.1-windows\bin\phantomjs.exe'
 base_url = r'https://www.zhihu.com/people/{0}/following'
@@ -18,6 +20,7 @@ class ZhiHuSpider():
         self.code_failure = 201             #抓取失败
         self.code_user_not_exist = 202      #用户不存在，僵尸粉
         self.code_user_not_useful = 203     #用户没有价值
+        self.code_following_none = 204      #用户没有关注任何人
         self.time_duration = 30             #抓完一次的间隔，默认30秒
         self.time_wait = 10                 #抓之前等待页面加载的时间
         pass
@@ -108,16 +111,71 @@ class ZhiHuSpider():
     #获取用户关注的人
     def getUserFollowing(self,userId):
         list = []
+        code = self.code_success
+        try:
+            url = base_url.format(userId)
+            driver = webdriver.PhantomJS(executable_path=path)
+            driver.get(url)
+            p = pq(driver.page_source)
+            # #先拿到页码数
+            page = p('div.Pagination button:not(.PaginationButton-next):last').text()
+            # 遍历每一个关注页
+            # for i in range(1,int(page)+1):
+            for i in range(1, 2):
+                url = "{0}?page={1}".format(url, i)
+                driver.get(url)
+                p = pq(driver.page_source)
+                links = p('div.List-item div.ContentItem-head div.Popover a.UserLink-link')
+                for link in links.items():
+                    userHerf = link.attr('href')
+                    if userHerf is None or userHerf == '':
+                        continue
+                    list.append(userHerf[8:])
+        except Exception as e:
+            print(e)
+        finally:
+            driver.close()
+        return list
+
+    #获取用户关注的人的页数
+    def getUserFollowingPageNum(self,userId):
+        page = 0
+        if userId is None or userId == '':
+            return page
+        try:
+            url = base_url.format(userId)
+            driver = webdriver.PhantomJS(executable_path=path)
+            driver.get(url)
+            p = pq(driver.page_source)
+            # 先判断有没有TA关注的人
+            count = p('div.List-item').size()
+            if count == 0:
+                page = 0
+            else:
+                #再拿到页码数
+                page = p('div.Pagination button:not(.PaginationButton-next):last').text()
+                #处理只有一页的情况
+                if page == '':
+                    page = 1
+                else:
+                    page = int(page)
+        except Exception as e:
+            print(e)
+            page = 0
+        finally:
+            driver.close()
+        return page
+
+    #获取指定页的关注者
+    def getUserFollowingPageContent(self,userId,page):
+        list = []
+        if page == 0:
+            return list
         url = base_url.format(userId)
-        driver = webdriver.PhantomJS(executable_path=path)
-        driver.get(url)
-        p = pq(driver.page_source)
-        # #先拿到页码数
-        page = p('div.Pagination button:not(.PaginationButton-next):last').text()
-        # 遍历每一个关注页
-        # for i in range(1,int(page)+1):
-        for i in range(1, 2):
-            url = "{0}?page={1}".format(url, i)
+        url = '{0}?page={1}'.format(url,page)
+        try:
+            driver = webdriver.PhantomJS(executable_path=path)
+            # driver.implicitly_wait(self.time_wait)
             driver.get(url)
             p = pq(driver.page_source)
             links = p('div.List-item div.ContentItem-head div.Popover a.UserLink-link')
@@ -126,6 +184,11 @@ class ZhiHuSpider():
                 if userHerf is None or userHerf == '':
                     continue
                 list.append(userHerf[8:])
+        except Exception as e:
+            list.clear()
+            print(e)
+        finally:
+            driver.close()
         return list
 
     def catchUserInfoThread(self):
@@ -154,12 +217,48 @@ class ZhiHuSpider():
             else:
                 d.updateUserInfo(userId,dict)
 
+    def catchUserFollowingThread(self):
+        s = ZhiHuSpider()
+        d = DBUtil()
+        st = Status.Following()
+        while True:
+            #取出第一个用户
+            userId,currentPage = d.getFirstUserToFollowing2()
+            print('开始抓取用户关注者,user_id={0}, current_page={1}'.format(userId,currentPage))
+            if userId is None:
+                time.sleep(3)
+                continue
+            d.setUserIsFollowing(userId,st.is_catching)
+            #获取关注者页数
+            total = self.getUserFollowingPageNum(userId)
+            print('当前用户总的关注者的页数，user_id={0}, total_page={1}'.format(userId,total))
+            #用户没有关注任何人
+            if total == 0:
+                d.setUserIsFollowing(userId,st.user_following_none)
+                continue
+            for i in range(currentPage+1,total+1):
+                list = self.getUserFollowingPageContent(userId,i)
+                #获取关注者成功
+                if len(list) > 0:
+                    d.saveFollowerInfo(userId,list)
+                    #设置状态
+                    d.setUserIsFollowing(userId,st.is_catching)
+                #设置这一页抓取完毕了
+                d.setUserFollowingPage(userId,i)
+                print('抓取完一页用户的关注者，user_id={0}, page={1}, list.size={2}'.format(userId,i,len(list)))
+                time.sleep(5)
+            #设置抓取完毕
+            d.setUserIsFollowing(userId,st.catched)
+            print('当前用户全部抓取完毕，user_id=',userId)
+
     def start(self):
-        t = threading.Thread(target=self.catchUserInfoThread)
+        # t = threading.Thread(target=self.catchUserInfoThread)
+        t = threading.Thread(target=self.catchUserFollowingThread)
         t.start()
         t.join()
 
 if __name__ == '__main__':
+    d = DBUtil()
+    d.init('excited-vczh')
     z = ZhiHuSpider()
     z.start()
-    # test()

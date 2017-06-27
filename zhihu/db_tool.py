@@ -8,7 +8,7 @@ class DBUtil(object):
         pass
 
     def __del__(self):
-        if self.conn:
+        if self.conn and self.conn.open:
             self.conn.close()
 
     def openMySql(self):
@@ -91,6 +91,38 @@ class DBUtil(object):
         print('获取第一个没有爬取关注者的用户, user_id={0}'.format(result))
         return result
 
+    #获取第一个需要爬取的用户和继续爬取的页数
+    def getFirstUserToFollowing2(self):
+        userId = None
+        page = None
+        try:
+            #首先判断有没有上次没有爬完的，有则继续爬
+            self.openMySql()
+            sql = 'select user_id,following_page from user where is_following=2 order by id'
+            cursor = self.conn.cursor()
+            cursor.execute(sql)
+            res = cursor.fetchone()
+            #有没爬完的则返回已经爬取的页数
+            if res:
+                userId = res[0]
+                page = res[1]
+            #获取第一个没有爬的，已经爬过的页数自然就是0
+            else:
+                sql = 'select user_id from user where is_following=0 order by id'
+                cursor.execute(sql)
+                res = cursor.fetchone()
+                if res:
+                    userId = res[0]
+                    page = 0
+        except Exception as e:
+            userId = None
+            page = None
+            print(e)
+        finally:
+            cursor.close()
+            self.closeMySql()
+        return (userId,page)
+
     # 设置是否抓取用户关注的人的标志，0表示已抓取，1表示未抓取
     def setUserIsFollowing(self,user_id, status):
         try:
@@ -100,6 +132,20 @@ class DBUtil(object):
             cursor.execute(sql)
             self.conn.commit()
             # print('用户is_following设置成功,user_id=%s  is_following=%d' % (user_id, status))
+        except Exception as e:
+            print(e)
+        finally:
+            cursor.close()
+            self.closeMySql()
+
+    #设置爬取完成的页数
+    def setUserFollowingPage(self,user_id,page):
+        try:
+            self.openMySql()
+            sql = "update user set following_page={0} where user_id='{1}'".format(page,user_id)
+            cursor = self.conn.cursor()
+            cursor.execute(sql)
+            self.conn.commit()
         except Exception as e:
             print(e)
         finally:
@@ -129,3 +175,17 @@ class DBUtil(object):
                 pass
         cursor.close()
         self.closeMySql()
+
+    # 首先插入一个初始化用户
+    def init(self,userId):
+        try:
+            self.openMySql()
+            sql = "insert into user(user_id) values('%s')" % userId
+            cursor = self.conn.cursor()
+            cursor.execute(sql)
+            self.conn.commit()
+        except Exception as e:
+            print(e)
+        finally:
+            cursor.close()
+            self.closeMySql()
