@@ -9,6 +9,9 @@ from datetime import  datetime
 import threading
 import  requests
 from zhihu import spider_const
+from zhihu.spider_const import log
+from zhihu.spider_const import loge
+
 
 base_url = r'https://www.zhihu.com/people/{0}/following'
 
@@ -52,14 +55,14 @@ class ZhiHuSpider():
                     dict.update(dictResult)
                 break
             except Exception as e:
-                print(e)
+                loge(e)
                 count = count + 1
-                print('发生异常，尝试第{0}次重试, user_id={1}'.format(count, userId))
+                log('发生异常，尝试第{0}次重试, user_id={1}'.format(count, userId))
             finally:
                 driver.close()
-                print('进入{0}秒休眠'.format(self.time_duration))
+                log('进入{0}秒休眠'.format(self.time_duration))
                 time.sleep(self.time_duration)
-                print('{0}秒休眠结束'.format(self.time_duration))
+                log('{0}秒休眠结束'.format(self.time_duration))
         # 尝试次数超过3次，那么认为抓取失败
         if count >= 3:
             dict['code'] = self.code_failure
@@ -133,7 +136,7 @@ class ZhiHuSpider():
                         continue
                     list.append(userHerf[8:])
         except Exception as e:
-            print(e)
+            loge(e)
         finally:
             driver.close()
         return list
@@ -161,7 +164,7 @@ class ZhiHuSpider():
                 else:
                     page = int(page)
         except Exception as e:
-            print(e)
+            loge(e)
             page = 0
         finally:
             driver.close()
@@ -187,7 +190,7 @@ class ZhiHuSpider():
                 list.append(userHerf[8:])
         except Exception as e:
             list.clear()
-            print(e)
+            loge(e)
         finally:
             driver.close()
         return list
@@ -225,14 +228,14 @@ class ZhiHuSpider():
         while True:
             #取出第一个用户
             userId,currentPage = d.getFirstUserToFollowing2()
-            print('开始抓取用户关注者,user_id={0}, current_page={1}'.format(userId,currentPage))
+            log('开始抓取用户关注者,user_id={0}, current_page={1}'.format(userId,currentPage))
             if userId is None:
                 time.sleep(3)
                 continue
             d.setUserIsFollowing(userId,st.is_catching)
             #获取关注者页数
             total = self.getUserFollowingPageNum(userId)
-            print('当前用户总的关注者的页数，user_id={0}, total_page={1}'.format(userId,total))
+            log('当前用户总的关注者的页数，user_id={0}, total_page={1}'.format(userId,total))
             #用户没有关注任何人
             if total == 0:
                 d.setUserIsFollowing(userId,st.user_following_none)
@@ -246,11 +249,11 @@ class ZhiHuSpider():
                     d.setUserIsFollowing(userId,st.is_catching)
                 #设置这一页抓取完毕了
                 d.setUserFollowingPage(userId,i)
-                print('抓取完一页用户的关注者，user_id={0}, page={1}, list.size={2}'.format(userId,i,len(list)))
+                log('抓取完一页用户的关注者，user_id={0}, page={1}, list.size={2}'.format(userId,i,len(list)))
                 time.sleep(self.time_duration)
             #设置抓取完毕
             d.setUserIsFollowing(userId,st.catched)
-            print('当前用户全部抓取完毕，user_id=',userId)
+            log('当前用户全部抓取完毕，user_id=%s' % userId)
 
     def start(self):
         t1 = threading.Thread(target=self.catchUserInfoThread)

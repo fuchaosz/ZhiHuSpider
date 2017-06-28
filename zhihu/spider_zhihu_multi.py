@@ -49,6 +49,41 @@ class ZhiHuMultiSpider():
                 print('用户抓取成功,pid={1}, user_id={0}'.format(os.getpid(), userId))
                 db.updateUserInfo(userId, dict)
 
+    def catchUserFollowingProcess(self,lock):
+        z = ZhiHuSpider()
+        d = DBUtil()
+        st = Status.Following()
+        while True:
+            lock.acquire()
+            # 取出第一个用户
+            userId, currentPage = d.getFirstUserToFollowing2()
+            print('开始抓取用户关注者,user_id={0}, current_page={1}'.format(userId, currentPage))
+            if userId is None:
+                lock.release()
+                time.sleep(3)
+                continue
+            d.setUserIsFollowing(userId, st.multi_catching)
+            lock.release()
+            # 获取关注者页数
+            total = z.getUserFollowingPageNum(userId)
+            print('当前用户总的关注者的页数，user_id={0}, total_page={1}'.format(userId, total))
+            # 用户没有关注任何人
+            if total == 0:
+                d.setUserIsFollowing(userId, st.user_following_none)
+                continue
+            for i in range(currentPage + 1, total + 1):
+                list = z.getUserFollowingPageContent(userId, i)
+                # 获取关注者成功
+                if len(list) > 0:
+                    d.saveFollowerInfo(userId, list)
+                # 设置这一页抓取完毕了
+                d.setUserFollowingPage(userId, i)
+                print('抓取完一页用户的关注者，user_id={0}, page={1}, list.size={2}'.format(userId, i, len(list)))
+                time.sleep(z.time_duration)
+            # 设置抓取完毕
+            d.setUserIsFollowing(userId, st.catched)
+            print('当前用户全部抓取完毕，user_id=', userId)
+
     def testProess(self,lock):
         while True:
             print('count={0},pid={1}'.format(self.count,os.getpid()))
@@ -66,4 +101,3 @@ class ZhiHuMultiSpider():
 if __name__ == '__main__':
     z = ZhiHuMultiSpider()
     z.start()
-    pass

@@ -1,5 +1,7 @@
 #数据库操作类
 import pymysql
+from zhihu.spider_const import log
+from zhihu.spider_const import loge
 
 class DBUtil(object):
 
@@ -30,11 +32,11 @@ class DBUtil(object):
             if res:
                 result = res[1]
         except Exception as e:
-            print(e)
+            loge(e)
         finally:
             cursor.close()
             self.closeMySql()
-        print('获取第一个没有被抓取的用户,user_id=', result)
+        log('获取第一个没有被抓取的用户,user_id=%s' % result)
         return result
 
     # 设置用户是否被抓取，0表示未被抓取，1表示已抓取，2表示正在抓取,3表示用户没有价值,4表示抓取失败
@@ -47,7 +49,7 @@ class DBUtil(object):
             self.conn.commit()
             # print('用户状态设置成功,user_id=%s  is_catch=%d' % (user_id, status))
         except Exception as e:
-            print(e)
+            loge(e)
         finally:
             cursor.close()
             self.closeMySql()
@@ -66,9 +68,9 @@ class DBUtil(object):
             cursor = self.conn.cursor()
             cursor.execute(sql)
             self.conn.commit()
-            print('更新用户信息到数据库成功，user_id=%s' % user_id)
+            log('更新用户信息到数据库成功，user_id=%s' % user_id)
         except Exception as e:
-            print(e)
+            loge(e)
         finally:
             cursor.close()
             self.closeMySql()
@@ -84,11 +86,11 @@ class DBUtil(object):
             res = cursor.fetchone()
             result = res[1]
         except Exception as e:
-            print(e)
+            loge(e)
         finally:
             cursor.close()
             self.closeMySql()
-        print('获取第一个没有爬取关注者的用户, user_id={0}'.format(result))
+        log('获取第一个没有爬取关注者的用户, user_id={0}'.format(result))
         return result
 
     #获取第一个需要爬取的用户和继续爬取的页数
@@ -117,7 +119,7 @@ class DBUtil(object):
         except Exception as e:
             userId = None
             page = None
-            print(e)
+            loge(e)
         finally:
             cursor.close()
             self.closeMySql()
@@ -133,7 +135,7 @@ class DBUtil(object):
             self.conn.commit()
             # print('用户is_following设置成功,user_id=%s  is_following=%d' % (user_id, status))
         except Exception as e:
-            print(e)
+            loge(e)
         finally:
             cursor.close()
             self.closeMySql()
@@ -147,7 +149,7 @@ class DBUtil(object):
             cursor.execute(sql)
             self.conn.commit()
         except Exception as e:
-            print(e)
+            loge(e)
         finally:
             cursor.close()
             self.closeMySql()
@@ -164,8 +166,8 @@ class DBUtil(object):
                 cursor.execute(sql)
                 self.conn.commit()
             except Exception as e:
-                print('保存用户关注信息，插入follow表发生异常,user_id = ',user_id)
-                print(e)
+                log('保存用户关注信息，插入follow表发生异常,user_id = {0}'.format(user_id))
+                loge(e)
         for item in follower_list:
             try:
                 sql = "insert into user(user_id) values('%s')" % item
@@ -185,7 +187,7 @@ class DBUtil(object):
             cursor.execute(sql)
             self.conn.commit()
         except Exception as e:
-            print(e)
+            loge(e)
         finally:
             cursor.close()
             self.closeMySql()
