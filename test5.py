@@ -56,8 +56,9 @@ if __name__ == '__main__':
     #                     )
     # logging.info('hello')
     # logging.info('test')
-    a = None
-    print('name:{0}'.format(a))
+    url = 'https://pic1.zhimg.com/3a6c25ac3864540e80cdef9bc2a73900_xl.jpg'
+    str = url.replace('xl','r')
+    print(str)
 
 
 

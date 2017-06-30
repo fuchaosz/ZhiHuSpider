@@ -77,6 +77,7 @@ class ZhiHuSpider():
         p = pq(content)
         # 先抓固定的，所有页面都一定有的信息，即使抓不到也只会是空，不会报错
         image = p('img.UserAvatar-inner').eq(0).attr('src')  # 用户头像
+        image = image.replace('xl','r') #转换为原始图片地址
         name = p('span.ProfileHeader-name').text()  # 姓名
         sex = '男' if p('a.is-active').text().split()[0] == '他' else '女'  # 用户性别
         sign = p('span.ProfileHeader-headline').text()  # 个性签名
