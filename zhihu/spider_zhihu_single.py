@@ -11,6 +11,7 @@ import  requests
 from zhihu import spider_const
 from zhihu.spider_const import log
 from zhihu.spider_const import loge
+import re
 
 
 base_url = r'https://www.zhihu.com/people/{0}/following'
@@ -51,8 +52,12 @@ class ZhiHuSpider():
                 else:
                     elem = driver.find_element_by_class_name('ProfileHeader-expandButton')
                     elem.send_keys(Keys.ENTER)
+                    #解析用户信息
                     dictResult = self.parseUserInfo(driver.page_source)
+                    #解析用户个人成就
+                    dictAchieve = self.parseAchieve(driver.page_source)
                     dict.update(dictResult)
+                    dict.update(dictAchieve)
                 break
             except Exception as e:
                 loge(e)
@@ -111,6 +116,49 @@ class ZhiHuSpider():
             elif itemName == '个人简介':
                 info = item('div.ProfileHeader-detailValue').text()
                 dict['info'] = info
+        return dict
+
+    #解析个人成就
+    def parseAchieve(self,content):
+        dict = {}
+        if content is None:
+            return dict
+        p = pq(content)
+        card = p('div.Profile-sideColumnItem')
+        for item in card.items():
+            pTitle = item('div.IconGraf')
+            title = pTitle.text()
+            if title == '优秀回答者':
+                topic = item('div.Profile-sideColumnItemValue').text()
+                dict['is_excellent_answer'] = True
+                dict['excellent_topic'] = topic
+                log('优秀回答者：topic=' + topic)
+            elif title[:4] == '知乎收录':
+                record_num = re.sub('\D', "", title)
+                record_by = item('div.Profile-sideColumnItemValue').text()
+                dict['record_num'] = record_num
+                dict['record_by'] = record_by
+                log('知乎收录{0}个答案, {1}'.format(record_num, record_by))
+            elif title[:2] == '获得':
+                # 获得xx次赞同
+                applaud_num = re.sub('\D', '', title)
+                itemContent = item('div.Profile-sideColumnItemValue').text()
+                # 获得感谢的次数
+                pattern = re.compile(r'获得\s?(\d+)\s?次感谢')
+                result = re.search(pattern, itemContent)
+                gratitude_num = result.groups()[0] if result else 0
+                # 获得收藏的次数
+                pattern2 = re.compile(r'(\d+)\s?次收藏')
+                result2 = re.search(pattern2, itemContent)
+                collect_num = result2.groups()[0] if result2 else 0
+                dict['applaud_num'] = applaud_num
+                dict['gratitude_num'] = gratitude_num
+                dict['collect_num'] = collect_num
+                log('获得{0}次称赞，{1}次感谢，{2}次收藏'.format(applaud_num, gratitude_num, collect_num))
+            elif title[:2] == '参与':
+                public_edit_num = re.sub('\D', '', title)
+                dict['public_edit_num'] = public_edit_num
+                log('参与{0}次公共编辑'.format(public_edit_num))
         return dict
 
     #获取用户关注的人
@@ -207,6 +255,7 @@ class ZhiHuSpider():
                 time.sleep(3)
                 continue
             d.setUserIsCatch(userId,st.is_catching)
+            #获取用户信息
             dict = s.getUserInfo(userId)
             code = dict['code']
             #用户没有价值
@@ -221,6 +270,7 @@ class ZhiHuSpider():
             #抓取成功
             else:
                 d.updateUserInfo(userId,dict)
+                d.saveAchieveInfo(userId,dict)
 
     def catchUserFollowingThread(self):
         s = ZhiHuSpider()
@@ -263,7 +313,6 @@ class ZhiHuSpider():
         t2.start()
         t1.join()
         t2.join()
-
 
 if __name__ == '__main__':
     d = DBUtil()

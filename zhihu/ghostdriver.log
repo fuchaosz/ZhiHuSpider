@@ -1,0 +1,31 @@
+[INFO  - 2017-07-03T10:00:39.961Z] GhostDriver - Main - running on port 50630
+[INFO  - 2017-07-03T10:00:43.144Z] Session [79ee4d30-5fd6-11e7-9472-7f0bc5160a28] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-07-03T10:00:43.144Z] Session [79ee4d30-5fd6-11e7-9472-7f0bc5160a28] - page.customHeaders:  - {}
+[INFO  - 2017-07-03T10:00:43.144Z] Session [79ee4d30-5fd6-11e7-9472-7f0bc5160a28] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-07-03T10:00:43.144Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 79ee4d30-5fd6-11e7-9472-7f0bc5160a28
+[ERROR - 2017-07-03T10:00:44.232Z] Session [79ee4d30-5fd6-11e7-9472-7f0bc5160a28] - page.onError - msg: Error: .com.zhihu.za.proto.ViewLocation#module_name is not a field: undefined
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-07-03T10:00:44.233Z] Session [79ee4d30-5fd6-11e7-9472-7f0bc5160a28] - page.onError - stack:
+  set (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  set (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  o (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  verifyValue (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  verifyValue (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  set (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  set (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  o (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  verifyValue (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  verifyValue (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  set (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  set (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  o (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  verifyValue (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  verifyValue (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  set (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  set (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  o (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:20)
+  f (https://zhstatic.zhihu.com/assets/zap/2.1.14/zap.js:13)
+  (anonymous function) (https://static.zhihu.com/static/js/desktop/404.js:25)
+
+  phantomjs://platform/console++.js:263 in error

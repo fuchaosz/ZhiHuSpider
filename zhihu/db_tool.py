@@ -108,7 +108,7 @@ class DBUtil(object):
             if res:
                 userId = res[0]
                 page = res[1]
-            #获取第一个没有爬的，已经爬过的页数自然就是0
+            #获取第一个没有爬的，没有爬过的页数自然就是0
             else:
                 sql = 'select user_id from user where is_following=0 order by id'
                 cursor.execute(sql)
@@ -177,6 +177,30 @@ class DBUtil(object):
                 pass
         cursor.close()
         self.closeMySql()
+
+    #保存个人成就信息
+    def saveAchieveInfo(self,user_id,achieveDict):
+        try:
+            self.openMySql()
+            record_num = achieveDict.get('record_num',0)
+            record_by = achieveDict.get('record_by','')
+            applaud_num = achieveDict.get('applaud_num',0)
+            gratitude_num = achieveDict.get('gratitude_num',0)
+            collect_num = achieveDict.get('collect_num',0)
+            public_edit_num = achieveDict.get('public_edit_num',0)
+            is_excellent_answer = 1 if achieveDict.get('is_excellent_answer',False) else 0
+            excellent_topic = achieveDict.get('excellent_topic','')
+            #('asd2',10,'编辑推荐',2,3,5,6,1,'生活话题')
+            sql = "insert into achieve(user_id,record_num,record_by,applaud_num,gratitude_num,collect_num,public_edit_num,is_excellent_answer,excellent_topic) values('{0}',{1},'{2}',{3},{4},{5},{6},{7},'{8}')".format(user_id,record_num,record_by,applaud_num,gratitude_num,collect_num,public_edit_num,is_excellent_answer,excellent_topic)
+            cursor = self.conn.cursor()
+            cursor.execute(sql)
+            self.conn.commit()
+            log('保存用户人成就到数据库成功,user_id = {0}'.format(user_id))
+        except Exception as e:
+            loge(e)
+        finally:
+            cursor.close()
+            self.closeMySql()
 
     # 首先插入一个初始化用户
     def init(self,userId):
