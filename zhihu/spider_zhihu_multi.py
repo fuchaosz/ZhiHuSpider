@@ -1,8 +1,8 @@
 #多进程知乎爬虫
 import multiprocessing
-from zhihu.spider_zhihu_single import ZhiHuSpider
-from zhihu.db_tool import DBUtil
-from zhihu.spider_status import Status
+from spider_zhihu_single import ZhiHuSpider
+from db_tool import DBUtil
+from spider_status import Status
 import time
 import os
 

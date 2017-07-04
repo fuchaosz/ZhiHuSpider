@@ -2,14 +2,14 @@
 #coding:utf-8
 #多线程知乎爬虫
 import multiprocessing
-from zhihu.spider_zhihu_single import ZhiHuSpider
-from zhihu.db_tool import DBUtil
-from zhihu.spider_status import Status
+from spider_zhihu_single import ZhiHuSpider
+from db_tool import DBUtil
+from spider_status import Status
 import time
 import os
 import threading
-from zhihu.spider_const import log
-from zhihu import spider_const as const
+from spider_const import log
+import spider_const as const
 
 class ZhiHuThreadSpider():
 

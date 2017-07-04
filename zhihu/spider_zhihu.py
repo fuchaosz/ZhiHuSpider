@@ -13,7 +13,7 @@ from pyquery import PyQuery as pq
 import multiprocessing
 import pymysql
 import time
-from zhihu import proxy_tool
+import proxy_tool
 
 start_user = r'https://www.zhihu.com/people/excited-vczh/following'  # 第一个用户,获取信息的入口
 path = r'E:\software\phantomjs-2.1.1-windows\bin\phantomjs.exe'

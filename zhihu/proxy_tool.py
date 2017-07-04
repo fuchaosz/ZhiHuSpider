@@ -3,7 +3,7 @@
 from pyquery import PyQuery as pq
 import random
 import requests
-from zhihu import spider_const
+import spider_const
 
 class ProxyTool():
 

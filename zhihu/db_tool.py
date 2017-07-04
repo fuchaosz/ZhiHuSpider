@@ -2,8 +2,8 @@
 #coding:utf-8
 #数据库操作类
 import pymysql
-from zhihu.spider_const import log
-from zhihu.spider_const import loge
+from spider_const import log
+from spider_const import loge
 
 class DBUtil(object):
 

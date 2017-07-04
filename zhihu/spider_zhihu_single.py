@@ -5,14 +5,14 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from pyquery import PyQuery as pq
 import time
-from zhihu.db_tool import DBUtil
-from zhihu.spider_status import  Status
+from db_tool import DBUtil
+from spider_status import  Status
 from datetime import  datetime
 import threading
 import  requests
-from zhihu import spider_const
-from zhihu.spider_const import log
-from zhihu.spider_const import loge
+import spider_const
+from spider_const import log
+from spider_const import loge
 import re
 
 

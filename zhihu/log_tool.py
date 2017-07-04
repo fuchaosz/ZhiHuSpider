@@ -1,6 +1,6 @@
 #日志工具
 import logging
-from zhihu import spider_const
+import spider_const
 
 logging.basicConfig(
     level=logging.INFO,
