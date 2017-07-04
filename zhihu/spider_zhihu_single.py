@@ -55,6 +55,7 @@ class ZhiHuSpider():
                     #解析用户信息
                     dictResult = self.parseUserInfo(driver.page_source)
                     #解析用户个人成就
+                    log('开始抓取用户个人成就，user_id = {0}'.format(userId))
                     dictAchieve = self.parseAchieve(driver.page_source)
                     dict.update(dictResult)
                     dict.update(dictAchieve)
@@ -228,7 +229,7 @@ class ZhiHuSpider():
         url = '{0}?page={1}'.format(url,page)
         try:
             driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path)
-            # driver.implicitly_wait(self.time_wait)
+            driver.implicitly_wait(self.time_wait)
             driver.get(url)
             p = pq(driver.page_source)
             links = p('div.List-item div.ContentItem-head div.Popover a.UserLink-link')

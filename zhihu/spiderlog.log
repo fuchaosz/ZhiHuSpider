@@ -1,0 +1,140 @@
+2017-07-04 11:33:50 db_tool.py[line:214] [pid:11152] [tid:12420] [method:init()] ERROR: (1062, "Duplicate entry 'excited-vczh' for key 'PRIMARY'")
+2017-07-04 11:33:50 spider_zhihu_thread.py[line:108] [pid:11152] [tid:4908] [method:exitThread()] INFO: 检测是否退出的线程启动
+2017-07-04 11:33:50 spider_zhihu_thread.py[line:117] [pid:11152] [tid:4908] [method:exitThread()] INFO: 未检测到退出文件，休眠60秒
+2017-07-04 11:33:50 db_tool.py[line:39] [pid:11152] [tid:3932] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:33:50 spider_zhihu_thread.py[line:67] [pid:11152] [tid:496] [method:catchUserFollowingThread()] INFO: 开始抓取用户关注者,user_id=excited-vczh, current_page=0
+2017-07-04 11:33:50 db_tool.py[line:39] [pid:11152] [tid:6604] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:33:50 db_tool.py[line:39] [pid:11152] [tid:11924] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:33:55 db_tool.py[line:39] [pid:11152] [tid:3932] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:33:55 db_tool.py[line:39] [pid:11152] [tid:6604] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:33:55 db_tool.py[line:39] [pid:11152] [tid:11924] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:34:00 db_tool.py[line:39] [pid:11152] [tid:6604] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:34:00 db_tool.py[line:39] [pid:11152] [tid:3932] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:34:00 db_tool.py[line:39] [pid:11152] [tid:11924] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:34:00 spider_zhihu_thread.py[line:74] [pid:11152] [tid:496] [method:catchUserFollowingThread()] INFO: 当前用户总的关注者的页数，user_id=excited-vczh, total_page=111
+2017-07-04 11:34:05 db_tool.py[line:39] [pid:11152] [tid:6604] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:34:05 db_tool.py[line:39] [pid:11152] [tid:3932] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:34:05 db_tool.py[line:39] [pid:11152] [tid:11924] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=None
+2017-07-04 11:34:05 spider_zhihu_thread.py[line:94] [pid:11152] [tid:496] [method:catchUserFollowingThread()] INFO: 抓取完一页用户的关注者，user_id=excited-vczh, page=1, list.size=20
+2017-07-04 11:34:10 db_tool.py[line:39] [pid:11152] [tid:6604] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=hinspinky
+2017-07-04 11:34:10 spider_zhihu_thread.py[line:36] [pid:11152] [tid:6604] [method:catchUserInfoThread()] INFO: 开始爬取用户，pid=11152, user_id=hinspinky
+2017-07-04 11:34:10 db_tool.py[line:39] [pid:11152] [tid:3932] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=wang-shu-pi-15
+2017-07-04 11:34:10 spider_zhihu_thread.py[line:36] [pid:11152] [tid:3932] [method:catchUserInfoThread()] INFO: 开始爬取用户，pid=11152, user_id=wang-shu-pi-15
+2017-07-04 11:34:10 db_tool.py[line:39] [pid:11152] [tid:11924] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=sama-elly
+2017-07-04 11:34:10 spider_zhihu_thread.py[line:36] [pid:11152] [tid:11924] [method:catchUserInfoThread()] INFO: 开始爬取用户，pid=11152, user_id=sama-elly
+2017-07-04 11:34:19 spider_zhihu_single.py[line:58] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 开始抓取用户个人成就，user_id = hinspinky
+2017-07-04 11:34:19 spider_zhihu_single.py[line:158] [pid:11152] [tid:6604] [method:parseAchieve()] INFO: 获得9082次称赞，1903次感谢，4461次收藏
+2017-07-04 11:34:19 spider_zhihu_single.py[line:162] [pid:11152] [tid:6604] [method:parseAchieve()] INFO: 参与13次公共编辑
+2017-07-04 11:34:19 spider_zhihu_single.py[line:69] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:34:19 spider_zhihu_single.py[line:58] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 开始抓取用户个人成就，user_id = sama-elly
+2017-07-04 11:34:19 spider_zhihu_single.py[line:158] [pid:11152] [tid:11924] [method:parseAchieve()] INFO: 获得46205次称赞，15185次感谢，58990次收藏
+2017-07-04 11:34:19 spider_zhihu_single.py[line:162] [pid:11152] [tid:11924] [method:parseAchieve()] INFO: 参与8次公共编辑
+2017-07-04 11:34:20 spider_zhihu_single.py[line:69] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:34:24 spider_zhihu_single.py[line:58] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 开始抓取用户个人成就，user_id = wang-shu-pi-15
+2017-07-04 11:34:24 spider_zhihu_single.py[line:158] [pid:11152] [tid:3932] [method:parseAchieve()] INFO: 获得27661次称赞，4917次感谢，15075次收藏
+2017-07-04 11:34:24 spider_zhihu_single.py[line:162] [pid:11152] [tid:3932] [method:parseAchieve()] INFO: 参与22次公共编辑
+2017-07-04 11:34:24 spider_zhihu_single.py[line:69] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:34:45 spider_zhihu_thread.py[line:94] [pid:11152] [tid:496] [method:catchUserFollowingThread()] INFO: 抓取完一页用户的关注者，user_id=excited-vczh, page=2, list.size=20
+2017-07-04 11:34:49 spider_zhihu_single.py[line:71] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:34:49 spider_zhihu_thread.py[line:54] [pid:11152] [tid:6604] [method:catchUserInfoThread()] INFO: 用户抓取成功,pid=11152, user_id=hinspinky
+2017-07-04 11:34:49 db_tool.py[line:71] [pid:11152] [tid:6604] [method:updateUserInfo()] INFO: 更新用户信息到数据库成功，user_id=hinspinky
+2017-07-04 11:34:49 db_tool.py[line:198] [pid:11152] [tid:6604] [method:saveAchieveInfo()] INFO: 保存用户个人成就到数据库成功,user_id = hinspinky
+2017-07-04 11:34:49 db_tool.py[line:39] [pid:11152] [tid:6604] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=zhang-an-qi-72
+2017-07-04 11:34:49 spider_zhihu_thread.py[line:36] [pid:11152] [tid:6604] [method:catchUserInfoThread()] INFO: 开始爬取用户，pid=11152, user_id=zhang-an-qi-72
+2017-07-04 11:34:50 spider_zhihu_single.py[line:71] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:34:50 spider_zhihu_thread.py[line:54] [pid:11152] [tid:11924] [method:catchUserInfoThread()] INFO: 用户抓取成功,pid=11152, user_id=sama-elly
+2017-07-04 11:34:50 db_tool.py[line:71] [pid:11152] [tid:11924] [method:updateUserInfo()] INFO: 更新用户信息到数据库成功，user_id=sama-elly
+2017-07-04 11:34:50 db_tool.py[line:198] [pid:11152] [tid:11924] [method:saveAchieveInfo()] INFO: 保存用户个人成就到数据库成功,user_id = sama-elly
+2017-07-04 11:34:50 db_tool.py[line:39] [pid:11152] [tid:11924] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=grace-li-18
+2017-07-04 11:34:50 spider_zhihu_thread.py[line:36] [pid:11152] [tid:11924] [method:catchUserInfoThread()] INFO: 开始爬取用户，pid=11152, user_id=grace-li-18
+2017-07-04 11:34:50 spider_zhihu_thread.py[line:117] [pid:11152] [tid:4908] [method:exitThread()] INFO: 未检测到退出文件，休眠60秒
+2017-07-04 11:34:54 spider_zhihu_single.py[line:71] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:34:54 spider_zhihu_thread.py[line:54] [pid:11152] [tid:3932] [method:catchUserInfoThread()] INFO: 用户抓取成功,pid=11152, user_id=wang-shu-pi-15
+2017-07-04 11:34:54 db_tool.py[line:71] [pid:11152] [tid:3932] [method:updateUserInfo()] INFO: 更新用户信息到数据库成功，user_id=wang-shu-pi-15
+2017-07-04 11:34:54 db_tool.py[line:198] [pid:11152] [tid:3932] [method:saveAchieveInfo()] INFO: 保存用户个人成就到数据库成功,user_id = wang-shu-pi-15
+2017-07-04 11:34:54 db_tool.py[line:39] [pid:11152] [tid:3932] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=mrsk
+2017-07-04 11:34:54 spider_zhihu_thread.py[line:36] [pid:11152] [tid:3932] [method:catchUserInfoThread()] INFO: 开始爬取用户，pid=11152, user_id=mrsk
+2017-07-04 11:35:01 spider_zhihu_single.py[line:58] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 开始抓取用户个人成就，user_id = grace-li-18
+2017-07-04 11:35:01 spider_zhihu_single.py[line:158] [pid:11152] [tid:11924] [method:parseAchieve()] INFO: 获得45095次称赞，8735次感谢，14309次收藏
+2017-07-04 11:35:01 spider_zhihu_single.py[line:162] [pid:11152] [tid:11924] [method:parseAchieve()] INFO: 参与21次公共编辑
+2017-07-04 11:35:01 spider_zhihu_single.py[line:69] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:35:02 spider_zhihu_single.py[line:58] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 开始抓取用户个人成就，user_id = mrsk
+2017-07-04 11:35:03 spider_zhihu_single.py[line:158] [pid:11152] [tid:3932] [method:parseAchieve()] INFO: 获得7212次称赞，346次感谢，2954次收藏
+2017-07-04 11:35:03 spider_zhihu_single.py[line:162] [pid:11152] [tid:3932] [method:parseAchieve()] INFO: 参与56次公共编辑
+2017-07-04 11:35:03 spider_zhihu_single.py[line:69] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:35:08 spider_zhihu_single.py[line:64] [pid:11152] [tid:6604] [method:getUserInfo()] ERROR: Message: {"errorMessage":"Unable to find element with class name 'ProfileHeader-expandButton'","request":{"headers":{"Accept":"application/json","Accept-Encoding":"identity","Connection":"close","Content-Length":"115","Content-Type":"application/json;charset=UTF-8","Host":"127.0.0.1:63324","User-Agent":"Python http auth"},"httpVersion":"1.1","method":"POST","post":"{\"using\": \"class name\", \"value\": \"ProfileHeader-expandButton\", \"sessionId\": \"bd0148a0-6069-11e7-bf2b-b3b7b6099caf\"}","url":"/element","urlParsed":{"anchor":"","query":"","file":"element","directory":"/","path":"/element","relative":"/element","port":"","host":"","password":"","user":"","userInfo":"","authority":"","protocol":"","source":"/element","queryKey":{},"chunks":["element"]},"urlOriginal":"/session/bd0148a0-6069-11e7-bf2b-b3b7b6099caf/element"}}
+Screenshot: available via screen
+
+2017-07-04 11:35:08 spider_zhihu_single.py[line:66] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 发生异常，尝试第1次重试, user_id=zhang-an-qi-72
+2017-07-04 11:35:08 spider_zhihu_single.py[line:69] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:35:25 spider_zhihu_thread.py[line:94] [pid:11152] [tid:496] [method:catchUserFollowingThread()] INFO: 抓取完一页用户的关注者，user_id=excited-vczh, page=3, list.size=20
+2017-07-04 11:35:31 spider_zhihu_single.py[line:71] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:35:31 spider_zhihu_thread.py[line:54] [pid:11152] [tid:11924] [method:catchUserInfoThread()] INFO: 用户抓取成功,pid=11152, user_id=grace-li-18
+2017-07-04 11:35:31 db_tool.py[line:71] [pid:11152] [tid:11924] [method:updateUserInfo()] INFO: 更新用户信息到数据库成功，user_id=grace-li-18
+2017-07-04 11:35:31 db_tool.py[line:198] [pid:11152] [tid:11924] [method:saveAchieveInfo()] INFO: 保存用户个人成就到数据库成功,user_id = grace-li-18
+2017-07-04 11:35:31 db_tool.py[line:39] [pid:11152] [tid:11924] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=xiao-mei-mei-mei-53
+2017-07-04 11:35:31 spider_zhihu_thread.py[line:36] [pid:11152] [tid:11924] [method:catchUserInfoThread()] INFO: 开始爬取用户，pid=11152, user_id=xiao-mei-mei-mei-53
+2017-07-04 11:35:33 spider_zhihu_single.py[line:71] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:35:33 spider_zhihu_thread.py[line:54] [pid:11152] [tid:3932] [method:catchUserInfoThread()] INFO: 用户抓取成功,pid=11152, user_id=mrsk
+2017-07-04 11:35:33 db_tool.py[line:71] [pid:11152] [tid:3932] [method:updateUserInfo()] INFO: 更新用户信息到数据库成功，user_id=mrsk
+2017-07-04 11:35:33 db_tool.py[line:198] [pid:11152] [tid:3932] [method:saveAchieveInfo()] INFO: 保存用户个人成就到数据库成功,user_id = mrsk
+2017-07-04 11:35:33 db_tool.py[line:39] [pid:11152] [tid:3932] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=kao-yu-mei-zhi
+2017-07-04 11:35:33 spider_zhihu_thread.py[line:36] [pid:11152] [tid:3932] [method:catchUserInfoThread()] INFO: 开始爬取用户，pid=11152, user_id=kao-yu-mei-zhi
+2017-07-04 11:35:38 spider_zhihu_single.py[line:71] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:35:45 spider_zhihu_single.py[line:58] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 开始抓取用户个人成就，user_id = xiao-mei-mei-mei-53
+2017-07-04 11:35:45 spider_zhihu_single.py[line:158] [pid:11152] [tid:11924] [method:parseAchieve()] INFO: 获得1243次称赞，193次感谢，361次收藏
+2017-07-04 11:35:45 spider_zhihu_single.py[line:162] [pid:11152] [tid:11924] [method:parseAchieve()] INFO: 参与17次公共编辑
+2017-07-04 11:35:45 spider_zhihu_single.py[line:69] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:35:50 spider_zhihu_thread.py[line:117] [pid:11152] [tid:4908] [method:exitThread()] INFO: 未检测到退出文件，休眠60秒
+2017-07-04 11:35:51 spider_zhihu_single.py[line:58] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 开始抓取用户个人成就，user_id = kao-yu-mei-zhi
+2017-07-04 11:35:51 spider_zhihu_single.py[line:158] [pid:11152] [tid:3932] [method:parseAchieve()] INFO: 获得3911次称赞，568次感谢，653次收藏
+2017-07-04 11:35:51 spider_zhihu_single.py[line:162] [pid:11152] [tid:3932] [method:parseAchieve()] INFO: 参与233次公共编辑
+2017-07-04 11:35:51 spider_zhihu_single.py[line:69] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:36:15 spider_zhihu_single.py[line:71] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:36:15 spider_zhihu_thread.py[line:54] [pid:11152] [tid:11924] [method:catchUserInfoThread()] INFO: 用户抓取成功,pid=11152, user_id=xiao-mei-mei-mei-53
+2017-07-04 11:36:15 db_tool.py[line:71] [pid:11152] [tid:11924] [method:updateUserInfo()] INFO: 更新用户信息到数据库成功，user_id=xiao-mei-mei-mei-53
+2017-07-04 11:36:15 db_tool.py[line:198] [pid:11152] [tid:11924] [method:saveAchieveInfo()] INFO: 保存用户个人成就到数据库成功,user_id = xiao-mei-mei-mei-53
+2017-07-04 11:36:16 db_tool.py[line:39] [pid:11152] [tid:11924] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=duanzhijun
+2017-07-04 11:36:16 spider_zhihu_thread.py[line:36] [pid:11152] [tid:11924] [method:catchUserInfoThread()] INFO: 开始爬取用户，pid=11152, user_id=duanzhijun
+2017-07-04 11:36:18 spider_zhihu_single.py[line:64] [pid:11152] [tid:6604] [method:getUserInfo()] ERROR: Message: {"errorMessage":"Unable to find element with class name 'ProfileHeader-expandButton'","request":{"headers":{"Accept":"application/json","Accept-Encoding":"identity","Connection":"close","Content-Length":"115","Content-Type":"application/json;charset=UTF-8","Host":"127.0.0.1:63530","User-Agent":"Python http auth"},"httpVersion":"1.1","method":"POST","post":"{\"using\": \"class name\", \"value\": \"ProfileHeader-expandButton\", \"sessionId\": \"da7edff0-6069-11e7-90f1-6d23b2784a33\"}","url":"/element","urlParsed":{"anchor":"","query":"","file":"element","directory":"/","path":"/element","relative":"/element","port":"","host":"","password":"","user":"","userInfo":"","authority":"","protocol":"","source":"/element","queryKey":{},"chunks":["element"]},"urlOriginal":"/session/da7edff0-6069-11e7-90f1-6d23b2784a33/element"}}
+Screenshot: available via screen
+
+2017-07-04 11:36:18 spider_zhihu_single.py[line:66] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 发生异常，尝试第2次重试, user_id=zhang-an-qi-72
+2017-07-04 11:36:18 spider_zhihu_single.py[line:69] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:36:21 spider_zhihu_single.py[line:71] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:36:21 spider_zhihu_thread.py[line:54] [pid:11152] [tid:3932] [method:catchUserInfoThread()] INFO: 用户抓取成功,pid=11152, user_id=kao-yu-mei-zhi
+2017-07-04 11:36:21 db_tool.py[line:71] [pid:11152] [tid:3932] [method:updateUserInfo()] INFO: 更新用户信息到数据库成功，user_id=kao-yu-mei-zhi
+2017-07-04 11:36:21 db_tool.py[line:198] [pid:11152] [tid:3932] [method:saveAchieveInfo()] INFO: 保存用户个人成就到数据库成功,user_id = kao-yu-mei-zhi
+2017-07-04 11:36:21 db_tool.py[line:39] [pid:11152] [tid:3932] [method:getFirstUserToCatch()] INFO: 获取第一个没有被抓取的用户,user_id=li-zi-zhu-98-31
+2017-07-04 11:36:21 spider_zhihu_thread.py[line:36] [pid:11152] [tid:3932] [method:catchUserInfoThread()] INFO: 开始爬取用户，pid=11152, user_id=li-zi-zhu-98-31
+2017-07-04 11:36:22 spider_zhihu_thread.py[line:94] [pid:11152] [tid:496] [method:catchUserFollowingThread()] INFO: 抓取完一页用户的关注者，user_id=excited-vczh, page=4, list.size=20
+2017-07-04 11:36:29 spider_zhihu_single.py[line:58] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 开始抓取用户个人成就，user_id = duanzhijun
+2017-07-04 11:36:29 spider_zhihu_single.py[line:158] [pid:11152] [tid:11924] [method:parseAchieve()] INFO: 获得432次称赞，119次感谢，375次收藏
+2017-07-04 11:36:29 spider_zhihu_single.py[line:69] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:36:34 spider_zhihu_single.py[line:58] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 开始抓取用户个人成就，user_id = li-zi-zhu-98-31
+2017-07-04 11:36:34 spider_zhihu_single.py[line:158] [pid:11152] [tid:3932] [method:parseAchieve()] INFO: 获得23496次称赞，2791次感谢，1860次收藏
+2017-07-04 11:36:34 spider_zhihu_single.py[line:162] [pid:11152] [tid:3932] [method:parseAchieve()] INFO: 参与15次公共编辑
+2017-07-04 11:36:34 spider_zhihu_single.py[line:69] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:36:48 spider_zhihu_single.py[line:71] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:36:50 spider_zhihu_thread.py[line:113] [pid:11152] [tid:4908] [method:exitThread()] INFO: 检测到退出文件，退出程序.exit_file = exit.txt
+2017-07-04 11:36:52 spider_zhihu_thread.py[line:103] [pid:11152] [tid:496] [method:catchUserFollowingThread()] INFO: 当前用户关注的人没有抓取完毕，中途退出，user_id = excited-vczh
+2017-07-04 11:36:52 spider_zhihu_thread.py[line:104] [pid:11152] [tid:496] [method:catchUserFollowingThread()] INFO: 获取用户关注者的线程运行结束，tid = 496
+2017-07-04 11:36:59 spider_zhihu_single.py[line:71] [pid:11152] [tid:11924] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:36:59 spider_zhihu_thread.py[line:54] [pid:11152] [tid:11924] [method:catchUserInfoThread()] INFO: 用户抓取成功,pid=11152, user_id=duanzhijun
+2017-07-04 11:36:59 db_tool.py[line:71] [pid:11152] [tid:11924] [method:updateUserInfo()] INFO: 更新用户信息到数据库成功，user_id=duanzhijun
+2017-07-04 11:36:59 db_tool.py[line:198] [pid:11152] [tid:11924] [method:saveAchieveInfo()] INFO: 保存用户个人成就到数据库成功,user_id = duanzhijun
+2017-07-04 11:36:59 spider_zhihu_thread.py[line:57] [pid:11152] [tid:11924] [method:catchUserInfoThread()] INFO: 获取用户详细信息的线程结束，tid = 11924
+2017-07-04 11:37:04 spider_zhihu_single.py[line:71] [pid:11152] [tid:3932] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:37:04 spider_zhihu_thread.py[line:54] [pid:11152] [tid:3932] [method:catchUserInfoThread()] INFO: 用户抓取成功,pid=11152, user_id=li-zi-zhu-98-31
+2017-07-04 11:37:04 db_tool.py[line:71] [pid:11152] [tid:3932] [method:updateUserInfo()] INFO: 更新用户信息到数据库成功，user_id=li-zi-zhu-98-31
+2017-07-04 11:37:04 db_tool.py[line:198] [pid:11152] [tid:3932] [method:saveAchieveInfo()] INFO: 保存用户个人成就到数据库成功,user_id = li-zi-zhu-98-31
+2017-07-04 11:37:04 spider_zhihu_thread.py[line:57] [pid:11152] [tid:3932] [method:catchUserInfoThread()] INFO: 获取用户详细信息的线程结束，tid = 3932
+2017-07-04 11:37:11 spider_zhihu_single.py[line:64] [pid:11152] [tid:6604] [method:getUserInfo()] ERROR: Message: {"errorMessage":"Unable to find element with class name 'ProfileHeader-expandButton'","request":{"headers":{"Accept":"application/json","Accept-Encoding":"identity","Connection":"close","Content-Length":"115","Content-Type":"application/json;charset=UTF-8","Host":"127.0.0.1:63750","User-Agent":"Python http auth"},"httpVersion":"1.1","method":"POST","post":"{\"using\": \"class name\", \"value\": \"ProfileHeader-expandButton\", \"sessionId\": \"05d03320-606a-11e7-9eb1-812c8755eb33\"}","url":"/element","urlParsed":{"anchor":"","query":"","file":"element","directory":"/","path":"/element","relative":"/element","port":"","host":"","password":"","user":"","userInfo":"","authority":"","protocol":"","source":"/element","queryKey":{},"chunks":["element"]},"urlOriginal":"/session/05d03320-606a-11e7-9eb1-812c8755eb33/element"}}
+Screenshot: available via screen
+
+2017-07-04 11:37:11 spider_zhihu_single.py[line:66] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 发生异常，尝试第3次重试, user_id=zhang-an-qi-72
+2017-07-04 11:37:11 spider_zhihu_single.py[line:69] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 进入30秒休眠
+2017-07-04 11:37:41 spider_zhihu_single.py[line:71] [pid:11152] [tid:6604] [method:getUserInfo()] INFO: 30秒休眠结束
+2017-07-04 11:37:41 spider_zhihu_thread.py[line:50] [pid:11152] [tid:6604] [method:catchUserInfoThread()] INFO: 用户抓取失败,pid=11152, user_id=zhang-an-qi-72
+2017-07-04 11:37:41 spider_zhihu_thread.py[line:57] [pid:11152] [tid:6604] [method:catchUserInfoThread()] INFO: 获取用户详细信息的线程结束，tid = 6604
+2017-07-04 11:37:41 spider_zhihu_thread.py[line:143] [pid:11152] [tid:12420] [method:start()] INFO: 所有程序运行完毕

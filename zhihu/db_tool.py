@@ -195,7 +195,7 @@ class DBUtil(object):
             cursor = self.conn.cursor()
             cursor.execute(sql)
             self.conn.commit()
-            log('保存用户人成就到数据库成功,user_id = {0}'.format(user_id))
+            log('保存用户个人成就到数据库成功,user_id = {0}'.format(user_id))
         except Exception as e:
             loge(e)
         finally:

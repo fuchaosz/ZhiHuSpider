@@ -14,11 +14,11 @@ detect_proxy_url = r'http://ip.chinaz.com/getip.aspx'
 
 #日志
 log_file_name = 'spiderlog.log'
-format_complex = '%(asctime)s %(filename)s[line:%(lineno)d] [pid:%(process)d] [tid:%(thread)d] [method:%(funcName)s()] %(levelname)s: %(message)s'
+format_complex = '%(asctime)s [pid:%(process)d] [tid:%(thread)d]: %(message)s'
 format_simple = '[tid:%(thread)d]:%(message)s'
 logging.basicConfig(
     level=logging.INFO,
-    format=format_simple,
+    format=format_complex,
     datefmt='%Y-%m-%d %H:%M:%S',
     # filename=log_file_name,
     # filemode='w'
@@ -28,3 +28,7 @@ loge = logging.getLogger('my_log').error
 
 #phantomjs浏览器的位置
 phantomjs_path = r'E:\software\phantomjs-2.1.1-windows\bin\phantomjs.exe'
+
+#检测到下面这个文件则退出全部程序
+control_exit_file = 'exit.txt'
+control_exit_duration = 1               #检测是否退出的时间间隔，单位：分钟
