@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#coding:utf-8
 from pyquery import PyQuery as pq
 import random
 import requests

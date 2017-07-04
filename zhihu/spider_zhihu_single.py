@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#coding:utf-8
 #单线程知乎爬虫，因为知乎对单个IP访问有限制，改为单线程
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys

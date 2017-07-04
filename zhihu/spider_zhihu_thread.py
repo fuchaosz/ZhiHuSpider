@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#coding:utf-8
 #多线程知乎爬虫
 import multiprocessing
 from zhihu.spider_zhihu_single import ZhiHuSpider

@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#coding:utf-8
 #数据库操作类
 import pymysql
 from zhihu.spider_const import log

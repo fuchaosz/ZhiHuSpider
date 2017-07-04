@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#coding:utf-8
 # 知乎爬虫
 import requests
 import os
