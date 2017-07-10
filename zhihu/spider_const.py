@@ -29,7 +29,7 @@ log = logging.getLogger('my_log').info
 loge = logging.getLogger('my_log').error
 
 #phantomjs浏览器的位置
-phantomjs_path = r'E:\software\phantomjs-2.1.1-windows\bin\phantomjs.exe'
+phantomjs_path = r'/usr/bin/phantomjs'
 
 #检测到下面这个文件则退出全部程序
 control_exit_file = 'exit.txt'

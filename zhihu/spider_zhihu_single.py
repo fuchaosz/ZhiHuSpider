@@ -7,9 +7,7 @@ from pyquery import PyQuery as pq
 import time
 from db_tool import DBUtil
 from spider_status import  Status
-from datetime import  datetime
 import threading
-import  requests
 import spider_const
 from spider_const import log
 from spider_const import loge
