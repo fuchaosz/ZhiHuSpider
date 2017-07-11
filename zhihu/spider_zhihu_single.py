@@ -39,7 +39,7 @@ class ZhiHuSpider():
         while count < 3:
             driver = None
             try:
-                driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path)
+                driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path,desired_capabilities=spider_const.desired_cap)
                 driver.implicitly_wait(self.time_wait)
                 driver.get(url)
                 # 保存图片
@@ -67,7 +67,7 @@ class ZhiHuSpider():
                 log('发生异常，尝试第{0}次重试, user_id={1}'.format(count, userId))
             finally:
                 if driver:
-                    driver.close()
+                    driver.quit()
                 log('进入{0}秒休眠'.format(self.time_duration))
                 time.sleep(self.time_duration)
                 log('{0}秒休眠结束'.format(self.time_duration))
@@ -171,7 +171,7 @@ class ZhiHuSpider():
         driver = None
         try:
             url = base_url.format(userId)
-            driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path)
+            driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path,desired_capabilities=spider_const.desired_cap)
             driver.get(url)
             p = pq(driver.page_source)
             # #先拿到页码数
@@ -192,7 +192,7 @@ class ZhiHuSpider():
             loge(e)
         finally:
             if driver:
-                driver.close()
+                driver.quit()
         return list
 
     #获取用户关注的人的页数
@@ -203,7 +203,7 @@ class ZhiHuSpider():
         driver = None
         try:
             url = base_url.format(userId)
-            driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path)
+            driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path,desired_capabilities=spider_const.desired_cap)
             driver.get(url)
             p = pq(driver.page_source)
             # 先判断有没有TA关注的人
@@ -223,7 +223,7 @@ class ZhiHuSpider():
             page = 0
         finally:
             if driver:
-                driver.close()
+                driver.quit()
         return page
 
     #获取指定页的关注者
@@ -235,7 +235,7 @@ class ZhiHuSpider():
         url = '{0}?page={1}'.format(url,page)
         driver = None
         try:
-            driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path)
+            driver = webdriver.PhantomJS(executable_path=spider_const.phantomjs_path,desired_capabilities=spider_const.desired_cap)
             driver.implicitly_wait(self.time_wait)
             driver.get(url)
             p = pq(driver.page_source)
@@ -250,7 +250,7 @@ class ZhiHuSpider():
             loge(e)
         finally:
             if driver:
-                driver.close()
+                driver.quit()
         return list
 
     def catchUserInfoThread(self):

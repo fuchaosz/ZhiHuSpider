@@ -34,3 +34,10 @@ phantomjs_path = r'/usr/bin/phantomjs'
 #检测到下面这个文件则退出全部程序
 control_exit_file = 'exit.txt'
 control_exit_duration = 1               #检测是否退出的时间间隔，单位：分钟
+
+#Phantomjs的配置
+desired_cap = {
+        'phantomjs.page.settings.loadImages' : False,
+        'phantomjs.page.settings.resourceTimeout' : 10000
+        # 'phantomjs.page.settings.userAgent' : '...'
+}
