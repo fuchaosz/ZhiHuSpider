@@ -22,8 +22,8 @@ logging.basicConfig(
     level=logging.INFO,
     format=format_complex,
     datefmt='%Y-%m-%d %H:%M:%S',
-    filename=log_file_name,
-    filemode='w'
+    # filename=log_file_name,
+    # filemode='w'
 )
 log = logging.getLogger('my_log').info
 loge = logging.getLogger('my_log').error
