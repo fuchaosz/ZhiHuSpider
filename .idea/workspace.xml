@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="511b49f4-6b6d-4706-950c-fd6e69dc31c5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ghostdriver.log" afterPath="$PROJECT_DIR$/ghostdriver.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test7.py" afterPath="$PROJECT_DIR$/test7.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhihu/db_tool.py" afterPath="$PROJECT_DIR$/zhihu/db_tool.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhihu/ghostdriver.log" afterPath="$PROJECT_DIR$/zhihu/ghostdriver.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhihu/spider_const.py" afterPath="$PROJECT_DIR$/zhihu/spider_const.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhihu/spider_zhihu_single.py" afterPath="$PROJECT_DIR$/zhihu/spider_zhihu_single.py" />
     </list>
     <ignored path="learnpython.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,7 +82,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spider_zhihu_single.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spider_zhihu_single.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhihu/spider_zhihu_single.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-17">
@@ -154,11 +148,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spider_const.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="spider_const.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zhihu/spider_const.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
+            <state relative-caret-position="327">
+              <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -266,10 +260,10 @@
         <option value="$PROJECT_DIR$/zhihu/spider_zhihu.py" />
         <option value="$PROJECT_DIR$/zhihu/proxy_tool.py" />
         <option value="$PROJECT_DIR$/zhihu/log_tool.py" />
-        <option value="$PROJECT_DIR$/zhihu/spider_const.py" />
         <option value="$PROJECT_DIR$/zhihu/spider_zhihu_single.py" />
         <option value="$PROJECT_DIR$/test7.py" />
         <option value="$PROJECT_DIR$/zhihu/db_tool.py" />
+        <option value="$PROJECT_DIR$/zhihu/spider_const.py" />
       </list>
     </option>
   </component>
@@ -745,7 +739,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="980" extended-state="7" />
+    <frame x="-11" y="-11" width="1942" height="980" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1057,14 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhihu/spider_const.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="28" column="27" lean-forward="false" selection-start-line="28" selection-start-column="27" selection-end-line="28" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/zhihu/spider_zhihu_thread.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3186">
@@ -1159,6 +1145,14 @@
           <folding>
             <element signature="e#62#92#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhihu/spider_const.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
