@@ -318,7 +318,7 @@ class ZhiHuSpider():
                 #设置这一页抓取完毕了
                 d.setUserFollowingPage(userId,i)
                 log('抓取完一页用户的关注者，user_id={0}, page={1}, list.size={2}'.format(userId,i,len(list)))
-                time.sleep(self.time_duration)
+                time.sleep(self.time_duration * 3)
             # 全部抓取成功
             if isFinished:
                 # 设置抓取完毕
