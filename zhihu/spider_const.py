@@ -39,6 +39,6 @@ control_exit_duration = 1               #检测是否退出的时间间隔，单
 #Phantomjs的配置
 desired_cap = {
         'phantomjs.page.settings.loadImages' : False,
-        'phantomjs.page.settings.resourceTimeout' : 10000
-        # 'phantomjs.page.settings.userAgent' : '...'
+        'phantomjs.page.settings.resourceTimeout' : 10000,
+        'phantomjs.page.settings.userAgent' : 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0'
 }
