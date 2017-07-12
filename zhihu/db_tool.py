@@ -62,11 +62,20 @@ class DBUtil(object):
             return
         try:
             self.openMySql()
+            name = dict.get('name')
+            image = dict.get('image', "")
+            sex = dict.get('sex')
+            sign =  dict.get('sign', '')
+            location = dict.get('location', '')
+            major = dict.get('major', '')
+            job = dict.get('job', '')
+            education = dict.get('education', '')
+            info = dict.get('info', '')
+            url = dict.get('url','')
+            #解决特殊字符的问题
+            info = self.filterString(info)
             # update user u set u.name='轮子哥2',u.image='www.baidu.com',u.sex='男',u.sign='个性签名',u.location='西雅图',u.major='软件',u.job='谷歌',u.education='xx大学',u.info='个人信息',u.is_catch=1 where u.user_id='vch2'
-            sql = "update user u set u.name='%s',u.image='%s',u.sex='%s',u.sign='%s',u.location='%s',u.major='%s',u.job='%s',u.education='%s',u.info='%s',url_following='%s',u.is_catch=1 where u.user_id='%s'"
-            sql = sql % (
-            dict.get('name'), dict.get('image', ""), dict.get('sex'), dict.get('sign', ''), dict.get('location', ''),
-            dict.get('major', ''), dict.get('job', ''), dict.get('education', ''), dict.get('info', ''),dict.get('url',''),user_id)
+            sql = "update user u set u.name='{0}',u.image='{1}',u.sex='{2}',u.sign='{3}',u.location='{4}',u.major='{5}',u.job='{6}',u.education='{7}',u.info='{8}',url_following='{9}',u.is_catch=1 where u.user_id='{10}'".format(name,image,sex,sign,location,major,job,education,info,url,user_id)
             cursor = self.conn.cursor()
             cursor.execute(sql)
             self.conn.commit()
@@ -217,3 +226,10 @@ class DBUtil(object):
         finally:
             cursor.close()
             self.closeMySql()
+
+    #过滤掉引号
+    def filterString(self,str):
+        if str:
+            str = str.replace("'", "\\\'")
+            str = str.replace('"', '\\\"')
+        return str

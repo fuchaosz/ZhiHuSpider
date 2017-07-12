@@ -12,6 +12,7 @@ import spider_const
 from spider_const import log
 from spider_const import loge
 import re
+import os
 
 
 base_url = r'https://www.zhihu.com/people/{0}/following'
@@ -26,6 +27,7 @@ class ZhiHuSpider():
         self.code_following_none = 204      #用户没有关注任何人
         self.time_duration = 30             #抓完一次的间隔，默认30秒
         self.time_wait = 10                 #抓之前等待页面加载的时间
+        self.isExit = False                 #控制退出的变量
         pass
 
     def getUserInfo(self,userId):
@@ -257,7 +259,7 @@ class ZhiHuSpider():
         s = ZhiHuSpider()
         d = DBUtil()
         st = Status.Catch()
-        while True:
+        while self.isExit == False:
             #取出第一个用户
             userId = d.getFirstUserToCatch()
             if userId is None:
@@ -285,7 +287,7 @@ class ZhiHuSpider():
         s = ZhiHuSpider()
         d = DBUtil()
         st = Status.Following()
-        while True:
+        while self.isExit == False:
             #取出第一个用户
             userId,currentPage = d.getFirstUserToFollowing2()
             log('开始抓取用户关注者,user_id={0}, current_page={1}'.format(userId,currentPage))
@@ -300,7 +302,13 @@ class ZhiHuSpider():
             if total == 0:
                 d.setUserIsFollowing(userId,st.user_following_none)
                 continue
+            #标识是否正常退出
+            isFinished = True
             for i in range(currentPage+1,total+1):
+                # 判断是否要退出
+                if self.isExit:
+                    isFinished = False
+                    break
                 list = self.getUserFollowingPageContent(userId,i)
                 #获取关注者成功
                 if len(list) > 0:
@@ -311,19 +319,46 @@ class ZhiHuSpider():
                 d.setUserFollowingPage(userId,i)
                 log('抓取完一页用户的关注者，user_id={0}, page={1}, list.size={2}'.format(userId,i,len(list)))
                 time.sleep(self.time_duration)
-            #设置抓取完毕
-            d.setUserIsFollowing(userId,st.catched)
-            log('当前用户全部抓取完毕，user_id=%s' % userId)
+            # 全部抓取成功
+            if isFinished:
+                # 设置抓取完毕
+                d.setUserIsFollowing(userId, st.catched)
+                log('当前用户关注的人全部抓取完毕，user_id= %s' % userId)
+            # 没有抓取完毕
+            else:
+                log('当前用户关注的人没有抓取完毕，中途退出，user_id = {0}'.format(userId))
+        log('获取用户关注者的线程运行结束')
+
+    # 定时检测是否退出的线程
+    def exitThread(self):
+        log('检测是否退出的线程启动')
+        while True:
+            file = spider_const.control_exit_file
+            if os.path.exists(file):
+                self.isExit = True
+                log('检测到退出文件，退出程序.exit_file = {0}'.format(file))
+                break
+            else:
+                duration = spider_const.control_exit_duration * 60
+                log('未检测到退出文件，休眠{0}秒'.format(duration))
+                time.sleep(duration)
 
     def start(self):
         t1 = threading.Thread(target=self.catchUserInfoThread)
         t2 = threading.Thread(target=self.catchUserFollowingThread)
+        t3 = threading.Thread(target=self.exitThread)
         t1.start()
         t2.start()
+        t3.start()
         t1.join()
         t2.join()
+        t3.join()
+        log("全部程序运行完毕")
 
 if __name__ == '__main__':
+    # 删除控制退出的文件
+    if os.path.exists(spider_const.control_exit_file):
+        os.remove(spider_const.control_exit_file)
     d = DBUtil()
     d.init('excited-vczh')
     z = ZhiHuSpider()
