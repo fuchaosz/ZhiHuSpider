@@ -16,7 +16,7 @@ class DBUtil(object):
             self.conn.close()
 
     def openMySql(self):
-        self.conn = pymysql.connect(host='localhost', user='root', password='root', db='zhihu', port=3306,charset='utf8')
+        self.conn = pymysql.connect(host='127.0.0.1', user='root', password='root', db='zhihu', port=3306,charset='utf8')
 
     def closeMySql(self):
         if self.conn:

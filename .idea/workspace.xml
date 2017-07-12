@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="511b49f4-6b6d-4706-950c-fd6e69dc31c5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhihu/spider_const.py" afterPath="$PROJECT_DIR$/zhihu/spider_const.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhihu/db_tool.py" afterPath="$PROJECT_DIR$/zhihu/db_tool.py" />
     </list>
     <ignored path="learnpython.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,8 +86,8 @@
       <file leaf-file-name="spider_zhihu_single.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhihu/spider_zhihu_single.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="316" column="53" lean-forward="true" selection-start-line="316" selection-start-column="53" selection-end-line="316" selection-end-column="53" />
+            <state relative-caret-position="-8">
+              <caret line="257" column="8" lean-forward="false" selection-start-line="257" selection-start-column="8" selection-end-line="257" selection-end-column="8" />
               <folding>
                 <element signature="e#62#92#0" expanded="true" />
               </folding>
@@ -94,32 +95,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="db_tool.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="db_tool.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zhihu/db_tool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="177" column="34" lean-forward="true" selection-start-line="177" selection-start-column="34" selection-end-line="177" selection-end-column="34" />
+            <state relative-caret-position="424">
+              <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
               <folding>
                 <element signature="e#40#54#0" expanded="true" />
-                <marker date="1499829963021" expanded="true" signature="760:807" ph="select * fro... user" />
-                <marker date="1499829963021" expanded="true" signature="1330:1376" ph="update user " />
-                <marker date="1499829963021" expanded="true" signature="2545:2570" ph="update user " />
-                <marker date="1499829963021" expanded="true" signature="2545:2574" ph="update user " />
-                <marker date="1499829963021" expanded="true" signature="2545:2584" ph="update user " />
-                <marker date="1499829963021" expanded="true" signature="2545:2588" ph="update user " />
-                <marker date="1499829963021" expanded="true" signature="2545:2596" ph="update user " />
-                <marker date="1499829963021" expanded="true" signature="2545:2743" ph="update user " />
-                <marker date="1499829963021" expanded="true" signature="2545:2744" ph="update user " />
-                <marker date="1499829963021" expanded="true" signature="3241:3292" ph="select * fro... user" />
-                <marker date="1499829963021" expanded="true" signature="3840:3912" ph="select user_... user" />
-                <marker date="1499829963021" expanded="true" signature="4210:4267" ph="select user_... user" />
-                <marker date="1499829963021" expanded="true" signature="4786:4836" ph="update user " />
-                <marker date="1499829963021" expanded="true" signature="5302:5356" ph="update user " />
-                <marker date="1499829963021" expanded="true" signature="5882:5939" ph="insert into follow... " />
-                <marker date="1499829963021" expanded="true" signature="6240:6278" ph="insert into user... " />
-                <marker date="1499829963021" expanded="true" signature="7159:7306" ph="insert into achieve... " />
-                <marker date="1499829963021" expanded="true" signature="7159:7348" ph="insert into achieve... " />
-                <marker date="1499829963021" expanded="true" signature="7876:7914" ph="insert into user... " />
+                <marker date="1499830800379" expanded="true" signature="760:807" ph="select * fro... user" />
+                <marker date="1499830800379" expanded="true" signature="1330:1376" ph="update user " />
+                <marker date="1499830800379" expanded="true" signature="2545:2570" ph="update user " />
+                <marker date="1499830800379" expanded="true" signature="2545:2574" ph="update user " />
+                <marker date="1499830800379" expanded="true" signature="2545:2584" ph="update user " />
+                <marker date="1499830800379" expanded="true" signature="2545:2588" ph="update user " />
+                <marker date="1499830800379" expanded="true" signature="2545:2596" ph="update user " />
+                <marker date="1499830800379" expanded="true" signature="2545:2743" ph="update user " />
+                <marker date="1499830800379" expanded="true" signature="2545:2744" ph="update user " />
+                <marker date="1499830800379" expanded="true" signature="3241:3292" ph="select * fro... user" />
+                <marker date="1499830800379" expanded="true" signature="3840:3912" ph="select user_... user" />
+                <marker date="1499830800379" expanded="true" signature="4210:4267" ph="select user_... user" />
+                <marker date="1499830800379" expanded="true" signature="4786:4836" ph="update user " />
+                <marker date="1499830800379" expanded="true" signature="5302:5356" ph="update user " />
+                <marker date="1499830800379" expanded="true" signature="5882:5939" ph="insert into follow... " />
+                <marker date="1499830800379" expanded="true" signature="6240:6278" ph="insert into user... " />
+                <marker date="1499830800379" expanded="true" signature="7159:7306" ph="insert into achieve... " />
+                <marker date="1499830800379" expanded="true" signature="7159:7348" ph="insert into achieve... " />
+                <marker date="1499830800379" expanded="true" signature="7876:7914" ph="insert into user... " />
               </folding>
             </state>
           </provider>
@@ -148,11 +149,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spider_const.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spider_const.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhihu/spider_const.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+            <state relative-caret-position="435">
+              <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -222,6 +223,7 @@
       <find>driver</find>
       <find>'</find>
       <find>&quot;</find>
+      <find>saveFollowerInfo</find>
     </findStrings>
     <replaceStrings>
       <replace>self.conn</replace>
@@ -262,8 +264,8 @@
         <option value="$PROJECT_DIR$/zhihu/log_tool.py" />
         <option value="$PROJECT_DIR$/zhihu/spider_zhihu_single.py" />
         <option value="$PROJECT_DIR$/test7.py" />
-        <option value="$PROJECT_DIR$/zhihu/db_tool.py" />
         <option value="$PROJECT_DIR$/zhihu/spider_const.py" />
+        <option value="$PROJECT_DIR$/zhihu/db_tool.py" />
       </list>
     </option>
   </component>
@@ -1088,35 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhihu/db_tool.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="177" column="34" lean-forward="true" selection-start-line="177" selection-start-column="34" selection-end-line="177" selection-end-column="34" />
-          <folding>
-            <element signature="e#40#54#0" expanded="true" />
-            <marker date="1499829963021" expanded="true" signature="760:807" ph="select * fro... user" />
-            <marker date="1499829963021" expanded="true" signature="1330:1376" ph="update user " />
-            <marker date="1499829963021" expanded="true" signature="2545:2570" ph="update user " />
-            <marker date="1499829963021" expanded="true" signature="2545:2574" ph="update user " />
-            <marker date="1499829963021" expanded="true" signature="2545:2584" ph="update user " />
-            <marker date="1499829963021" expanded="true" signature="2545:2588" ph="update user " />
-            <marker date="1499829963021" expanded="true" signature="2545:2596" ph="update user " />
-            <marker date="1499829963021" expanded="true" signature="2545:2743" ph="update user " />
-            <marker date="1499829963021" expanded="true" signature="2545:2744" ph="update user " />
-            <marker date="1499829963021" expanded="true" signature="3241:3292" ph="select * fro... user" />
-            <marker date="1499829963021" expanded="true" signature="3840:3912" ph="select user_... user" />
-            <marker date="1499829963021" expanded="true" signature="4210:4267" ph="select user_... user" />
-            <marker date="1499829963021" expanded="true" signature="4786:4836" ph="update user " />
-            <marker date="1499829963021" expanded="true" signature="5302:5356" ph="update user " />
-            <marker date="1499829963021" expanded="true" signature="5882:5939" ph="insert into follow... " />
-            <marker date="1499829963021" expanded="true" signature="6240:6278" ph="insert into user... " />
-            <marker date="1499829963021" expanded="true" signature="7159:7306" ph="insert into achieve... " />
-            <marker date="1499829963021" expanded="true" signature="7159:7348" ph="insert into achieve... " />
-            <marker date="1499829963021" expanded="true" signature="7876:7914" ph="insert into user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test7.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -1138,21 +1111,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/zhihu/spider_const.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="40" column="24" lean-forward="false" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/zhihu/spider_zhihu_single.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="316" column="53" lean-forward="true" selection-start-line="316" selection-start-column="53" selection-end-line="316" selection-end-column="53" />
+        <state relative-caret-position="-8">
+          <caret line="257" column="8" lean-forward="false" selection-start-line="257" selection-start-column="8" selection-end-line="257" selection-end-column="8" />
           <folding>
             <element signature="e#62#92#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhihu/spider_const.py">
+    <entry file="file://$PROJECT_DIR$/zhihu/db_tool.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="424">
+          <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+          <folding>
+            <element signature="e#40#54#0" expanded="true" />
+            <marker date="1499830800379" expanded="true" signature="760:807" ph="select * fro... user" />
+            <marker date="1499830800379" expanded="true" signature="1330:1376" ph="update user " />
+            <marker date="1499830800379" expanded="true" signature="2545:2570" ph="update user " />
+            <marker date="1499830800379" expanded="true" signature="2545:2574" ph="update user " />
+            <marker date="1499830800379" expanded="true" signature="2545:2584" ph="update user " />
+            <marker date="1499830800379" expanded="true" signature="2545:2588" ph="update user " />
+            <marker date="1499830800379" expanded="true" signature="2545:2596" ph="update user " />
+            <marker date="1499830800379" expanded="true" signature="2545:2743" ph="update user " />
+            <marker date="1499830800379" expanded="true" signature="2545:2744" ph="update user " />
+            <marker date="1499830800379" expanded="true" signature="3241:3292" ph="select * fro... user" />
+            <marker date="1499830800379" expanded="true" signature="3840:3912" ph="select user_... user" />
+            <marker date="1499830800379" expanded="true" signature="4210:4267" ph="select user_... user" />
+            <marker date="1499830800379" expanded="true" signature="4786:4836" ph="update user " />
+            <marker date="1499830800379" expanded="true" signature="5302:5356" ph="update user " />
+            <marker date="1499830800379" expanded="true" signature="5882:5939" ph="insert into follow... " />
+            <marker date="1499830800379" expanded="true" signature="6240:6278" ph="insert into user... " />
+            <marker date="1499830800379" expanded="true" signature="7159:7306" ph="insert into achieve... " />
+            <marker date="1499830800379" expanded="true" signature="7159:7348" ph="insert into achieve... " />
+            <marker date="1499830800379" expanded="true" signature="7876:7914" ph="insert into user... " />
+          </folding>
         </state>
       </provider>
     </entry>
