@@ -1,10 +1,10 @@
 #!user/bin/env python3
-# -*- coding: utf-8 -*-
-import sys
-sys.reload(sys)
-sys.setdefaultencoding('utf-8')
+# coding:utf-8
 from zhihu.spider_const import  log
 
+def mlog(str):
+    str = str.encode('UTF-8')
+    log(str)
+
 if __name__ == '__main__':
-    log('hello world 测试中文')
-    pass
+    log('测试中文123')

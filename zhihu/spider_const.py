@@ -25,6 +25,9 @@ logging.basicConfig(
     filename=log_file_name,
     filemode='w'
 )
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+logging.getLogger('my_log').addHandler(console)
 log = logging.getLogger('my_log').info
 loge = logging.getLogger('my_log').error
 
