@@ -1,6 +1,8 @@
 #!user/bin/env python3
 # -*- coding: utf-8 -*-
-
+import sys
+sys.reload(sys)
+sys.setdefaultencoding('utf-8')
 from zhihu.spider_const import  log
 
 if __name__ == '__main__':
