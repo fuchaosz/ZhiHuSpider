@@ -4,6 +4,7 @@
 import pymysql
 from zhihu.spider_zhihu_single import ZhiHuSpider
 from zhihu.db_tool import DBUtil
+from zhihu.spider_const import log
 
 conn = pymysql.connect(
     host='localhost',
@@ -68,8 +69,12 @@ def test4():
         cursor.close()
         conn.close()
 
+def test5():
+    log('Hello')
+
 if __name__ == '__main__':
     # test()
-    test2()
+    # test2()
     # test3()
     # test4()
+    pass
