@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="511b49f4-6b6d-4706-950c-fd6e69dc31c5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test8.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test7.py" afterPath="$PROJECT_DIR$/test7.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhihu/spider_const.py" afterPath="$PROJECT_DIR$/zhihu/spider_const.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spiderlog.log" afterPath="$PROJECT_DIR$/spiderlog.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test8.py" afterPath="$PROJECT_DIR$/test8.py" />
     </list>
     <ignored path="learnpython.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,7 +24,7 @@
     <SUITE FILE_PATH="coverage/learnpython$spider_zhihu_single.coverage" NAME="spider_zhihu_single Coverage Results" MODIFIED="1499829370450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zhihu" />
     <SUITE FILE_PATH="coverage/learnpython$Unittests_in_test4_py.coverage" NAME="Unittests in test4.py Coverage Results" MODIFIED="1498214579180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/learnpython$spider_zhihu_multi.coverage" NAME="spider_zhihu_multi Coverage Results" MODIFIED="1498463778707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zhihu" />
-    <SUITE FILE_PATH="coverage/learnpython$test8.coverage" NAME="test8 Coverage Results" MODIFIED="1500256439324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/learnpython$test8.coverage" NAME="test8 Coverage Results" MODIFIED="1500257164640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/learnpython$test4.coverage" NAME="test4 Coverage Results" MODIFIED="1498554226132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/learnpython$proxy_tool.coverage" NAME="proxy_tool Coverage Results" MODIFIED="1498551319022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/zhihu" />
     <SUITE FILE_PATH="coverage/learnpython$test5.coverage" NAME="test5 Coverage Results" MODIFIED="1499070460741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -143,8 +142,8 @@
       <file leaf-file-name="test8.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+            <state relative-caret-position="135">
+              <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -165,8 +164,8 @@
       <file leaf-file-name="spider_const.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/zhihu/spider_const.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-288">
-              <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+            <state relative-caret-position="351">
+              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -259,8 +258,9 @@
         <option value="$PROJECT_DIR$/zhihu/db_tool.py" />
         <option value="$PROJECT_DIR$/zhihu/spider_zhihu_single.py" />
         <option value="$PROJECT_DIR$/test7.py" />
-        <option value="$PROJECT_DIR$/test8.py" />
         <option value="$PROJECT_DIR$/zhihu/spider_const.py" />
+        <option value="$PROJECT_DIR$/spiderlog.log" />
+        <option value="$PROJECT_DIR$/test8.py" />
       </list>
     </option>
   </component>
@@ -1140,26 +1140,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spiderlog.log">
+    <entry file="file://$PROJECT_DIR$/zhihu/spider_const.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="351">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zhihu/spider_const.py">
+    <entry file="file://$PROJECT_DIR$/spiderlog.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        <state relative-caret-position="27">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        <state relative-caret-position="135">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
           <folding />
         </state>
       </provider>

@@ -4,5 +4,5 @@
 from zhihu.spider_const import  log
 
 if __name__ == '__main__':
-    log('hello world')
+    log('hello world 测试中文')
     pass
