@@ -26,6 +26,8 @@ logging.basicConfig(
     filemode='w'
 )
 console = logging.StreamHandler()
+formatter = logging.Formatter(format_complex)
+console.setFormatter(formatter)
 console.setLevel(logging.INFO)
 logging.getLogger('my_log').addHandler(console)
 log = logging.getLogger('my_log').info
